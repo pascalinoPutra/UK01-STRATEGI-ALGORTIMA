@@ -3,7 +3,6 @@
 
 using namespace std;
 
-// fungsi untuk mencari koin palsu menggunakan divide and conquer
 int searchFakeCoin(int arr[], int low, int high)
 {
     // base case jika hanya ada satu koin
@@ -13,8 +12,7 @@ int searchFakeCoin(int arr[], int low, int high)
     // hitung indeks tengah
     int mid = low + (high - low) / 2;
 
-    // jika jumlah elemen di array genap, maka bagi array menjadi dua bagian sama besar
-    // dan bandingkan jumlah berat di setiap bagian.
+   
     if ((high - low + 1) % 2 == 0)
     {
         int leftSum = accumulate(arr + low, arr + mid + 1, 0);
@@ -26,8 +24,7 @@ int searchFakeCoin(int arr[], int low, int high)
         else
             return -1; // jika tidak ada koin palsu
     }
-    // jika jumlah elemen di array ganjil, maka bagi array menjadi dua bagian
-    // dengan mempertahankan elemen palsu di satu bagian.
+   
     else
     {
         int leftSum = accumulate(arr + low, arr + mid, 0);
@@ -47,7 +44,7 @@ int main()
     int coins[n];
     for (int i = 1; i <= n; i++)
     {
-        if (i == 791) // koin palsu pada indeks ke-501
+        if (i == 791) // koin palsu pada indeks ke-709
             coins[i] = 4;
         else
             coins[i] = 5;
